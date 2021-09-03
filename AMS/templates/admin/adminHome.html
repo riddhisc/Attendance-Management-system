@@ -1,0 +1,25 @@
+
+{% extends "admin/admintemp.html" %}
+{% load static %}
+
+{% block body%}
+
+<div class="container-fluid  justify-content-evenly row  ms-1 box-margin">
+       
+    <div class="rounded box col-md-3 " style="background:teal;color:#fff">
+        Total Students <strong>{{ Students }}</strong>
+        
+    </div>
+
+    <div class="rounded box  col-md-3  " style="background:tomato; color:#fff;">
+        Attendence <strong>{{ Att_Per }} %</strong>
+    </div>
+
+    <div class="rounded  box col-md-3 " style="background:purple; color:#fff;">
+        Leaves Requests <strong>{{ LeaveReq }}</strong>
+    </div>
+    
+    
+
+</div>
+{% endblock %}
