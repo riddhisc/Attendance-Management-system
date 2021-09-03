@@ -1,0 +1,25 @@
+
+{% extends "user/usertemp.html" %}
+{% load static %}
+
+{% block body%}
+
+    <div class="container mt-2 center">
+        <img src="{{ student.std_image.url }}" alt="DP" width="30%" height="30%" class="d-inline-block mt-4 align-text-top rounded-circle">
+        
+        <form action="{% url 'UpdateProfile' %}" method="POST" enctype='multipart/form-data' >
+            {% csrf_token %}
+            <div class="form-group mt-4 btn">
+                <label >Upload Image:</label>
+                <input type="file" class="form-control"
+            name="image" placeholder="Upload Image">
+            </div>
+            <div><button type="submit" class="btn btn-primary ">Done</button></div>
+
+            
+        </form>
+    </div>
+    
+    
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "user/usertemp.html" %}
+{% load static %}
+
+{% block body%}
+
+<div class="container">
+    <h1 class="display-6 mt-4 center">Attendence Data</h1>
+    <table class="table mt-4">
+        <thead>
+            <th>ID</th>
+            <th>Reg. No</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+        
+            {% for rec in  attendence %}
+                    <tr>
+                        <td>{{  rec.att_id }}</td>
+                        <td>{{ rec.std_reg }}</td>
+                        <td>{{ rec.att_date }}</td>
+                        <td>{{ rec.att_time }}</td>
+                        <td>{{ rec.att_status }}</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

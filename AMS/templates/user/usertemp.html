@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="{% static '/css/user.css' %}">
+<script type="text/javascript" src="{% static '/js/user.js' %}"></script>
+<title>{{ student.std_reg }}</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'dashboardHome' %}">Dashboard</a>
+            <a class="navbar-brand" href="{% url 'markAttendence' %}">Mark Attendence</a>
+            <a class="navbar-brand" href="{% url 'markLeave' %}">Mark Leave</a>
+            <a class="navbar-brand" href="{% url 'markLeaveReq' %}">Leave Request</a>
+            <a class="navbar-brand" href="{% url 'viewAttendence' %}">View Attendence</a>
+            <a class="navbar-brand text-danger" href="{% url 'Logout' %}">Logout</a>
+            <a href="{% url 'changeProfile' %}"><img src="{{ student.std_image.url }}" alt="DP" width="55" height="60" class="d-inline-block align-text-top rounded-circle"></a>
+
+        </div>
+
+    </nav>
+    
+   
+    {% block body %}
+
+    
+    {% endblock %}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+</html>

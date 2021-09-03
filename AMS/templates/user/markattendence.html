@@ -1,0 +1,53 @@
+{% extends "user/usertemp.html" %}
+{% load static %}
+
+{% block body%}
+    
+
+    <div class="container bg-success mark mt-4 text-white rounded">
+        <h2 class="display-6">Attendece Status </h2>
+        <table class="table">
+          <tbody>
+            
+            <tr>
+              <th scope="row">Reg. No</th>
+              <td>{{OBJ.std_reg}}</td>
+            </tr>
+
+
+            <tr>
+              <th scope="row">Status</th>
+              <td>{{OBJ.att_status}}</td>
+            </tr>
+
+            
+
+            <tr>
+                <th scope="row">Date</th>
+                <td>{{ OBJ.att_date }}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Time</th>
+              <td>{{ OBJ.att_time }}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Result</th>
+              <td>{{ MSG }}</td>
+            </tr>
+
+            
+            
+          </tbody>
+        </table>
+
+        
+    </div>
+    
+
+    
+    
+    
+
+{% endblock %}

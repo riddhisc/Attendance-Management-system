@@ -1,0 +1,33 @@
+{% extends "user/usertemp.html" %}
+{% load static %}
+
+{% block body%}
+<body class="bg-secondary">
+    
+
+<div class="container leaveReq mt-4 border border-light pb-4 rounded">
+    <form action="{% url 'leaveReq' %}" method="post" class="mt-4">
+        {% csrf_token %}
+
+        <!-- Message input -->
+        <div class="form-outline w-100  mt-4">
+            <label class="form-label rounded-pill bg-warning ps-4 pe-4" for="form4Example3 ">Reason For Leave</label>
+            <textarea class="form-control" id="form4Example3" rows="8"  placeholder="20-50 Words" name="reason"></textarea>
+            
+        </div>
+
+        <div class="d-flex flex-row justify-content-end">
+            <a href="{% url 'dashboardHome' %}" class="btn btn-primary btn-block mt-4">Cancel</a>
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-success btn-block mt-4 ms-2">
+                Submit
+            </button>
+        </div>
+        
+
+    </form>
+
+</div>
+    
+
+{% endblock %}
