@@ -1,6 +1,11 @@
 #Attendance Management System
+
+
 #This is Attendance Management System using Django.
+
+
 User panel
+
 User panel may include the registration page, and login
 There must be a 3 buttons , mark attendance , Mark Leave and view button
 Mark attendance in which students can mark his/her attendance as present
@@ -10,6 +15,7 @@ Also give the option to edit the profile picture
 User should be able to Send Leave Request to admin for leaves.
 
 Admin panel
+
 The admin can login through login page
 View all the record of login students
 The admin can edit, add, and delete the students attendance
