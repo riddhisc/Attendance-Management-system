@@ -1,0 +1,29 @@
+.box{
+    /* margin-top: 20%; */
+    width:23%;
+    padding: 3%;
+    text-align: center;
+    font-weight: normal;
+    font-size: larger;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.box-margin{
+    padding-top: 8%;
+    /* background-color: yellow; */
+}
+.center{
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+.nav-color{
+    /* background-color:#adb5bd ; */
+    background-color:rgb(4, 4, 87);
+}
