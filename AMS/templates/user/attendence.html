@@ -1,0 +1,33 @@
+
+{% extends "user/usertemp.html" %}
+{% load static %}
+
+{% block body%}
+
+    
+
+    <div class="container-fluid  justify-content-evenly row mt-4 ms-1">
+       
+        <div class="bg-primary col-md-2 box   rounded info-box text-white">
+            Present <strong>{{ presents }}</strong>
+            
+        </div>
+        <div class="bg-success col-md-2 box rounded info-box text-white">
+            Absents <strong>{{ absents }}</strong>
+        </div>
+        <div class="bg-danger  col-md-2 box rounded info-box text-white">
+            Leaves <strong>{{ leaves }}</strong>
+        </div>
+        <div class="bg-warning col-md-2 box  rounded info-box  ">
+            Attendence <strong><script>percentage("{{ presents }}","{{ absents }}","{{ leaves }}");</script></strong>%
+        </div>
+        
+
+    </div>
+
+    
+    
+
+    
+
+{% endblock %}
