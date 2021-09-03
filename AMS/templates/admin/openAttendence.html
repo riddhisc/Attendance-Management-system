@@ -1,0 +1,42 @@
+
+{% extends "admin/admintemp.html" %}
+{% load static %}
+
+{% block body%}
+
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+        <div class="alert alert-warning" role="alert">
+        {{ message }}
+        </div>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="container-fluid center mt-4 pt-4">
+        <img src="{{ student.std_image.url }}" alt="DP" width="15%" height="15%" class="d-inline-block mt-4 align-text-top rounded-circle">
+        <h2>{{student.std_name}}</h2>
+        <table class="table table-light mt-4">
+            <tbody>
+                <th>Registration</th>
+                <th>Email</th>
+                <th>PRN</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <tr>
+                    <td>{{student.std_reg}}</td>
+                    <td>{{student.std_email}}</td>
+                    <td>{{student.std_cnic}}</td>
+                    <td>{{attendence.att_date}}</td>
+                    <td>{{attendence.att_time}}</td>
+                    <td>{{attendence.att_status}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    This is Open Attendence
+{% endblock %}

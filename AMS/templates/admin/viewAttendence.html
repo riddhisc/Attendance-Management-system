@@ -1,0 +1,64 @@
+
+{% extends "admin/admintemp.html" %}
+{% load static %}
+
+{% block body%}
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="alert alert-primary" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h1 class="display-4 center" >Attendence Data</h1>
+
+    <div style="width: 95%; margin-left:2%;">
+        <table id="showTable" class="table table-striped table-bordered center" style="width: 100%;margin-left:2%;">    
+            <thead>
+                <th>#</th>
+                <th>Reg. No</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Action</th>
+               
+            </thead>
+            <tbody>
+                {% for rec in  Attendence %}
+                
+                        <tr>
+                            <td>{{ rec.att_id }}</td>
+                            <td>{{ rec.std_reg_id }}</td>
+                            <td>{{ rec.att_date }}</td>
+                            <td>{{ rec.att_time }}</td>
+                            <td>{{ rec.att_status }}</td>
+                            <td>
+                                <a href="{% url 'openAttendence'  rec.att_id%}" class="btn btn-info"><i class="fas fa-external-link-square-alt"></i></a>
+                                <a href="{% url 'editAttendence'  rec.att_id%}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                <a href="{% url 'delAttendence'  rec.att_id%}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+
+
+                            </td>
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#showTable').DataTable();
+        });
+    </script>
+
+    This is View Attendence 
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" type="text/css" href="{% static '/css/admin.css' %}">
+<script type="text/javascript" src="{% static '/js/admin.js' %}"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<!-- For Table -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+<title>Admin</title>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-dark nav-color ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'AdminDashHome' %}">Home</a>
+
+            <a class="navbar-brand" href="{% url 'AdminviewAttendence' %}">Attendence</a>
+            <a class="navbar-brand" href="{% url 'newAttendence' %}">New Attendence</a>
+            <a class="navbar-brand" href="{% url 'Students' %}">Students</a>
+            <a class="navbar-brand" href="{% url 'LeaveRequestShow' %}">Leave Requests</a>
+            <a class="navbar-brand" href="{% url 'reportInput' %}">Reports</a>
+            <a class="navbar-brand" href="{% url 'grade' %}">Grade</a>
+            <a class="navbar-brand text-warning" href="{% url 'AdminLogout' %}">Logout</a>
+
+            
+
+        </div>
+
+    </nav>
+
+    
+   
+    {% block body %}
+
+    
+    {% endblock %}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+</html>

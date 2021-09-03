@@ -1,0 +1,46 @@
+
+{% extends "admin/admintemp.html" %}
+{% load static %}
+
+{% block body%}
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+        <div class="alert alert-primary" role="alert">
+        {{ message }}
+        </div>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="container-fluid center ">
+        <img src="{{ student.std_image.url }}" alt="DP" width="15%" height="15%" class="d-inline-block mt-4 align-text-top rounded-circle">
+        <h2>{{student.std_name}}</h2>
+        <hr>
+
+        <div class="container ">
+            <form action="{% url 'updateAttendence' attendence.att_id %}" method="post">
+                {% csrf_token %} 
+
+                <label style="width:20%">Attendence ID:</label><input disabled name="att_id" value="{{attendence.att_id}}"></input><br>
+                <label style="width:20%">Reg:</label><input disabled name="reg" value="{{student.std_reg}}"></input><br>
+                <label style="width:20%">Email:</label><input disabled value="{{student.std_email}}"></input><br>
+                <label style="width:20%">Date:</label><input disabled value="{{attendence.att_date}}"></input><br>
+                <label style="width:20%">Time:</label><input disabled value="{{attendence.att_time}}"></input><br>
+                <label style="width:20%">Status:</label>
+                <select style="width:20%" name="status" value="{{attendence.att_status}}">
+                    <option value="{{attendence.att_status}}">{{attendence.att_status}}</option>
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                    <option value="Leave">Leave</option>
+                  </select>
+                <br>
+                <button type="submit" class="btn btn-primary justify-content-end mt-1 ms-4">Submit</button>
+            </form>
+
+        </div>
+        
+                
+    </div>
+
+    This is Edit Attendence
+{% endblock %}

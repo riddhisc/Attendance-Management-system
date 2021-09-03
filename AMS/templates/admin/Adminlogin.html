@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="{% static '/css/admin.css' %}">
+<title>Admin Login</title>
+</head>
+<body>
+
+    <div class="container  mt-4  ">
+        {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <div class="alert alert-warning" role="alert">
+            {{ message }}
+            </div>
+        {% endfor %}
+        </ul>
+        {% endif %}
+
+        <div class="row justify-content-center   ">
+            <div class="col-md-6  border  mt-4 bg-light p-4   ">
+                <div class="login-form  mt-4  ">
+                    <form action="{% url 'AdminDash' %}" method="POST" class="row g-3">
+                        {% csrf_token %}
+                        <h4>Admin Login</h4>
+                        <div class="col-12">
+                            <label>Username</label>
+                            <input type="text" name="username" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="col-12">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-dark float-end">Login</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+</html>

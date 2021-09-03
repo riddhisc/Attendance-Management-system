@@ -1,0 +1,32 @@
+
+{% extends "admin/admintemp.html" %}
+{% load static %}
+
+{% block body%}
+    
+    <div class="container-fluid  mt-4 pt-4">
+        
+        <h2 class="center">Show Report</h2>
+        <div class="container mt-4 border border-dark p-4 center">
+            <form action="{% url 'ShowReport'  %}" method="post">
+                {% csrf_token %} 
+                <label style="width:20%">Reg:</label>
+                <select style="width:20%" name="reg" value="{{student.std_reg}}" >
+                    {% for student in Students %}
+                        <option value="{{student.std_reg}}">{{student.std_reg}}</option>
+                    {% endfor %}
+                </select><br>
+                
+                <label style="width:20%">From</label></label><input style="width:20%" type="date" name="from" value="2021-08-03"><br>
+                <label style="width:20%">To</label><input type="date" style="width:20%" name="to" value="2021-08-03"><br>
+                
+                <button type="submit" class="btn btn-primary justify-content-end mt-4">Show Report</button>
+            </form>
+
+        </div>
+        
+                
+    </div>
+
+    This is  Input Report
+{% endblock %}

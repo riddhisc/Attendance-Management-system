@@ -1,0 +1,46 @@
+{% extends "admin/admintemp.html" %}
+{% load static %}
+
+{% block body%}
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+        <div class="alert alert-primary" role="alert">
+        {{ message }}
+        </div>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="container-fluid center ">
+        <h1 class="mt-4 center">Add New Attendence</h1>
+        <hr>
+
+        <div class="container ">
+            <form action="{% url 'addNewAttendence' %}" method="post">
+                {% csrf_token %} 
+
+                <label style="width:20%">Reg:</label>
+                <select style="width:20%" name="reg">
+                    {% for std in students %}
+                        <option value="{{std.std_reg}}">{{std.std_reg}}</option>
+                    {% endfor %}
+                </select><br>
+
+
+                <label style="width:20%">Status:</label>
+                <select style="width:20%" name="status">
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                    <option value="Leave">Leave</option>
+                </select>
+                <br>
+                <button type="submit" class="btn btn-primary justify-content-end mt-4 ms-4">Submit</button>
+            </form>
+
+        </div>
+        
+                
+    </div>
+
+    This is Add New Attendence
+{% endblock %}
