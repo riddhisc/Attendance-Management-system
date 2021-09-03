@@ -11,7 +11,7 @@ There must be a 3 buttons , mark attendance , Mark Leave and view button
 Mark attendance in which students can mark his/her attendance as present
 View button in which student can view all the marked attendance
 Student which mark his/her attendance once in a day can’t mark it again in as well as not delete his/her attendance.
-Also give the option to edit the profile picture
+Also have the option to edit the profile picture
 User should be able to Send Leave Request to admin for leaves.
 
 Admin panel
